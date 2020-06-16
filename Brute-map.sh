@@ -43,104 +43,91 @@ echo
 echo -n -e "brutemap > "
 read -r brutemap
 if [ "$brutemap" == "01" ] || [ "$brutemap" == "1" ];
+	then	
+	echo	
+	echo -n -e "Escribe la IP o la pagina: "
+	read -r iphostname
+	echo
+	nmap --script ftp-brute -p 21  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
+
+	elif [ "$brutemap" == "02" ] || [ "$brutemap" == "2" ];
+	then
+	echo
+	echo -n -e "Escribe la IP o la pagina: "
+	read -r iphostname
+	echo
+	nmap --script ssh-brute -p 22,8022  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
+
+	elif [ "$brutemap" == "03" ] || [ "$brutemap" == "3" ];
+	then
+	echo
+	echo -n -e "Escribe la IP o la pagina: "
+	read -r iphostname
+	echo
+	nmap --script mysql-brute,mysql-enum -p 3306  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
+
+	elif [ "$brutemap" == "04" ] || [ "$brutemap" == "4" ];
+	then
+	echo
+	echo -n -e "Escribe la IP o la pagina: "
+	read -r iphostname
+	echo
+	nmap --script telnet-brute -p 23  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
+
+	elif [ "$brutemap" == "05" ] || [ "$brutemap" == "5" ];
+	then
+	echo
+	echo -n -e "Escribe la IP o la pagina: "
+	read -r iphostname
+	echo
+	nmap --script vnc-brute  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
+
+	elif [ "$brutemap" == "06" ] || [ "$brutemap" == "6" ];
+	then
+	echo
+	echo -n -e "Escribe la IP o la pagina: "
+	read -r iphostname
+	echo
+	nmap --script http-brute -p 80,443  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
+
+	elif [ "$brutemap" == "07" ] || [ "$brutemap" == "7" ];
+	then
+	echo
+	echo -n -e "Escribe la IP o la pagina: "
+	echo
+	nmap --script http-joomla-brute -p 80,443  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
 	
-		if [ "$brutemap" == "01" ] || [ "$brutemap" == "1" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script ftp-brute -p 21  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
+	elif [ "$brutemap" == "08" ] || [ "$brutemap" == "8" ];
+	then
+	echo
+	echo -n -e "Escribe la IP o la pagina: "
+	read -r iphostname
+	echo
+	nmap --script http-wordpress-brute -p 80,443  "$iphostname"
+	read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
+	bash "$0"
 
-		elif [ "$brutemap" == "02" ] || [ "$brutemap" == "2" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script ssh-brute -p 22,8022  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
+	elif [ "$brutemap" == "09" ] || [ "$brutemap" == "9" ];
+	then
+	echo -e "\033[1;31m[!] Creado por _Y000!_... \033[1;0m"
+	sleep 10
+	bash "$0"
 
-		elif [ "$brutemap" == "03" ] || [ "$brutemap" == "3" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script mysql-brute,mysql-enum -p 3306  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
-
-		elif [ "$brutemap" == "04" ] || [ "$brutemap" == "4" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script telnet-brute -p 23  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
-
-		elif [ "$brutemap" == "05" ] || [ "$brutemap" == "5" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script vnc-brute  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
-
-		elif [ "$brutemap" == "06" ] || [ "$brutemap" == "6" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script http-brute -p 80,443  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
-
-		elif [ "$brutemap" == "07" ] || [ "$brutemap" == "7" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script http-joomla-brute -p 80,443  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
-		elif [ "$brutemap" == "00" ] || [ "$brutemap" == "0" ];
-		then
-		echo -e "\033[1;31m[!] Atras..\033[1;0m"
-		bash "$0"
-
-		elif [ "$brutemap" == "08" ] || [ "$brutemap" == "8" ];
-		then
-		echo
-		echo -n -e "Escribe la IP o la pagina: "
-		read -r iphostname
-		echo
-		nmap --script http-wordpress-brute -p 80,443  "$iphostname"
-		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
-		bash "$0"
-		else
-		echo
-		echo -e "\033[1;31m[!] Elegiste mal...\033[1;0m"
-		sleep 1
-		bash "$0"
-
-
-		elif [ "$brutemap" == "09" ] || [ "$brutemap" == "9" ];
-		then
-		echo
-		echo -e "\033[1;31m[!] Creado por _Y000!_... \033[1;0m"
-		sleep 10
-		bash "$0"
-		elif [ "$brute-map" == "00" ] || [ "$brute-map" == "0" ];
-		then
-		exit
-		fi
+        elif [ "$brutemap" == "00" ] || [ "$brutemap" == "0" ];
+	then
+	exit
+	fi
