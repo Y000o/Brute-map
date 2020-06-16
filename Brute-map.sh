@@ -40,11 +40,11 @@ echo -e " [08] Fuerza bruta a HTTP WORDPRESS"
 echo -e " [09] Acerca de mi"
 echo -e " [0] Salir"
 echo
-echo -n -e "brute-map > "
-read -r brute-map
-if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
+echo -n -e "brutemap > "
+read -r brutemap
+if [ "$brutemap" == "01" ] || [ "$brutemap" == "1" ];
 	
-		if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
+		if [ "$brutemap" == "01" ] || [ "$brutemap" == "1" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -54,7 +54,7 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
 		bash "$0"
 
-		elif [ "$brute-map" == "02" ] || [ "$brute-map" == "2" ];
+		elif [ "$brutemap" == "02" ] || [ "$brutemap" == "2" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -64,7 +64,7 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
 		bash "$0"
 
-		elif [ "$brute-map" == "03" ] || [ "$brute-map" == "3" ];
+		elif [ "$brutemap" == "03" ] || [ "$brutemap" == "3" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -74,7 +74,7 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
 		bash "$0"
 
-		elif [ "$brute-map" == "04" ] || [ "$brute-map" == "4" ];
+		elif [ "$brutemap" == "04" ] || [ "$brutemap" == "4" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -84,7 +84,7 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
 		bash "$0"
 
-		elif [ "$brute-map" == "05" ] || [ "$brute-map" == "5" ];
+		elif [ "$brutemap" == "05" ] || [ "$brutemap" == "5" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -94,7 +94,7 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
 		bash "$0"
 
-		elif [ "$brute-map" == "06" ] || [ "$brute-map" == "6" ];
+		elif [ "$brutemap" == "06" ] || [ "$brutemap" == "6" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -104,7 +104,7 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
 		bash "$0"
 
-		elif [ "$brute-map" == "07" ] || [ "$brute-map" == "7" ];
+		elif [ "$brutemap" == "07" ] || [ "$brutemap" == "7" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -113,12 +113,12 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		nmap --script http-joomla-brute -p 80,443  "$iphostname"
 		read -rsp $'Presiona alguna tecla para continuar ...\n' -n 1 key
 		bash "$0"
-		elif [ "$brute-map" == "00" ] || [ "$brute-map" == "0" ];
+		elif [ "$brutemap" == "00" ] || [ "$brutemap" == "0" ];
 		then
 		echo -e "\033[1;31m[!] Atras..\033[1;0m"
 		bash "$0"
 
-		elif [ "$brute-map" == "08" ] || [ "$brute-map" == "8" ];
+		elif [ "$brutemap" == "08" ] || [ "$brutemap" == "8" ];
 		then
 		echo
 		echo -n -e "Escribe la IP o la pagina: "
@@ -132,16 +132,15 @@ if [ "$brute-map" == "01" ] || [ "$brute-map" == "1" ];
 		echo -e "\033[1;31m[!] Elegiste mal...\033[1;0m"
 		sleep 1
 		bash "$0"
+
+
+		elif [ "$brutemap" == "09" ] || [ "$brutemap" == "9" ];
+		then
+		echo
+		echo -e "\033[1;31m[!] Creado por _Y000!_... \033[1;0m"
+		sleep 10
+		bash "$0"
+		elif [ "$brute-map" == "00" ] || [ "$brute-map" == "0" ];
+		then
+		exit
 		fi
-
-
-elif [ "$brute-map" == "09" ] || [ "$brute-map" == "9" ];
-then
-echo
-echo -e "\033[1;31m[!] Creado por _Y000!_... \033[1;0m"
-sleep 10
-bash "$0"
-elif [ "$brute-map" == "00" ] || [ "$brute-map" == "0" ];
-then
-exit
-fi
